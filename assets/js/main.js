@@ -5,4 +5,4 @@ const sr = ScrollReveal({
   delay: 100,
 })
 
-sr.reveal(`.article-header__container>div>img, .article__paragraph>h3, .article__text>h2, .article-header__container>div>section, .article__paragraph>p`,{origin: 'left'})
+sr.reveal(`.article-header__container>div>img, .article__paragraph>h2, .image, .article__paragraph>h3, .article__text>h2, .article-header__container>div>section, .article__paragraph>p`,{origin: 'left'})
