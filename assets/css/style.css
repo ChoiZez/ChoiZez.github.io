@@ -1,5 +1,58 @@
+:root {
+    --header-height: 3.5rem;
+    --hue: 14;
+    --first-color: hsl(var(--hue), 91%, 54%);
+    --first-color-alt: hsl(var(--hue), 91%, 50%);
+    --title-color: hsl(var(--hue), 4%, 100%);
+    --text-color: hsl(var(--hue), 4%, 85%);
+    --text-color-light: hsl(var(--hue), 4%, 55%);
+    --body-color: linear-gradient(90deg, hsl(104, 28%, 40%) 5%, hsl(58, 28%, 40%) 100%);
+    --container-color: linear-gradient(136deg, hsl(104, 28%, 35%) 5%, hsl(58, 28%, 35%) 100%);
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-black: 900;
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
 
-article section.article__text .article__paragraph, article section.article__text>h2, article section.article__text>h3, article section.article__text>h4 {
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+article .article__text .article__paragraph, article .article__text>h2, article .article__text>h3, article .article__text>h4 {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -8,17 +61,143 @@ article section.article__text .article__paragraph, article section.article__text
     position: relative
 }
 @media (max-width:1150px) {
-    article section.article__text .article__paragraph, article section.article__text>h2, article section.article__text>h3, article section.article__text>h4 {
+    article .article__text .article__paragraph, article .article__text>h2, article .article__text>h3, article .article__text>h4 {
         margin-left: calc((100vw - 76.8rem)/38.2*16.5 + 2rem);
         padding-right: calc((100vw - 76.8rem)/38.2*7 + 2rem)
     }
 }
 @media (max-width:768px) {
-    article section.article__text .article__paragraph, article section.article__text>h2, article section.article__text>h3, article section.article__text>h4 {
+    article .article__text .article__paragraph, article .article__text>h2, article .article__text>h3, article .article__text>h4 {
         margin-left: 0;
         padding-right: 0
     }
 }
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__link,
+  .nav__logo,
+  .nav__close {
+    color: #000;
+  }
+  
+  .nav__toggle {
+    font-size: 2.25rem;
+    cursor: pointer;
+    color: #fff;   
+    margin-left: 90%; 
+}
+.nav-header{
+    position: fixed;
+    top: 0;
+    left: auto;
+    width: 100%;
+}
+.nav__menu {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    top: -150%;
+    left: 0;
+    padding: 3.5rem 0;
+    transition: .4s;
+    z-index: 9999;
+    border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.container{
+    z-index: 1;
+}
+.nav__header{
+    left: auto;
+}
+  .nav__close {
+    font-size: 1.8rem;
+    position: absolute;
+    top: .5rem;
+    right: .7rem;
+    cursor: pointer;
+  }
+  
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  
+  .nav__link {
+    transition: .4s;
+  }
+  
+  .nav__link:hover {
+    color: #1070a7;
+  }
+  
+  .nav__item--title{
+      color :#000;
+      font-weight: 700;
+  }
+    /* Show menu */
+.show-menu {
+     top: -1px;
+}
+
+.nav__link{
+    text-transform: initial;
+    font-weight: 400;
+  }
+
+/*medium*/
+@media screen and (min-width: 767px){
+    body{
+      margin: 0;
+    }
+
+    .section{
+      padding: 7rem 0 2rem;
+    }
+  
+    .nav{
+      height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav__menu{
+        width: 80%;
+        left:10%;
+    }
+    .nav__close {
+        font-size: 3rem;
+        position: absolute;
+        top: .5rem;
+        right: 1rem;
+        cursor: pointer;
+      }
+}
+  
+  
+  /* Active link */
+  
+  .active-link{
+    position: relative;
+  }
+  
+  .active-link::before{
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+  }
+  
+  
 article section .article__paragraph p:last-child {
     margin-bottom: 0
 }
@@ -52,6 +231,7 @@ article+section {
         -moz-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        padding-top: 2rem;
         margin-bottom: calc((100vw - 32rem)/53*4 + 4rem)
     }
 }
@@ -126,7 +306,8 @@ article+section {
     margin-left: auto
 }
 .article-page.page {
-    margin-top: 0
+    margin-top: 0;
+    background: #fff
 }
 .footer {
     background: #000;
@@ -167,25 +348,25 @@ article+section {
 }
 @font-face {
     font-family: Hauss;
-    src: url(/assets/fonts/ALSHauss-Light.ttf);
+    src: url(../fonts/ALSHauss-Light.ttf);
     font-style: normal;
     font-weight: 300;
 }
 @font-face {
     font-family: Hauss;
-    src: url(/assets/fonts/ALSHauss-Regular.ttf);
+    src: url(../fonts/ALSHauss-Regular.ttf);
     font-style: normal;
     font-weight: 400;
 }
 @font-face {
     font-family: Hauss;
-    src: url(/assets/fonts/ALSHauss-Medium.ttf);
+    src: url(../fonts/ALSHauss-Medium.ttf);
     font-style: normal;
     font-weight: 500;
 }
 @font-face {
     font-family: Hauss;
-    src: url(/assets/fonts/ALSHauss-Bold.ttf);
+    src: url(../fonts/ALSHauss-Bold.ttf);
     font-style: normal;
     font-weight: 700;
 }
@@ -217,7 +398,7 @@ html {
     font-size: 62.5%
 }
 body {
-    background: #fff;
+    background: #000;
     color: #000;
     font-family: Hauss, Arial, sans-serif;
     font-size: 2rem;
@@ -361,7 +542,8 @@ p {
     }
 }
 .dark-theme {
-    color: #fff
+    color: #fff;
+    background: rgb(13, 32, 75)
 }
 .copyright{
     border-top: 1px solid #e5e5e5;
@@ -372,4 +554,15 @@ p {
 }
 .copyright span{
     color: #fac91b;
+}
+
+.dark{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    opacity: .7;
 }
