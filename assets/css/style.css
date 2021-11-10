@@ -101,7 +101,7 @@ article .article__text .article__paragraph, article .article__text>h2, article .
 .nav__menu {
     position: fixed;
     width: 100%;
-    background: #fff;
+    background: #e2e2e2;
     top: -150%;
     left: 0;
     padding: 3.5rem 0;
@@ -189,11 +189,11 @@ article .article__text .article__paragraph, article .article__text>h2, article .
   .active-link::before{
     content: '';
     position: absolute;
-    bottom: -.75rem;
-    left: 45%;
-    width: 5px;
-    height: 5px;
-    background-color: var(--title-color);
+    bottom: 30%;
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    background-color: #222541;
     border-radius: 50%;
   }
   
