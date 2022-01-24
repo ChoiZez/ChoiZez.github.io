@@ -97,6 +97,7 @@ article .article__text .article__paragraph, article .article__text>h2, article .
     top: 0;
     left: auto;
     width: 100%;
+    z-index: 1;
 }
 .nav__menu {
     position: fixed;
