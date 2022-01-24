@@ -3,29 +3,24 @@ const navMenu = document.getElementById('nav-menu'),
     navClose = document.getElementById('nav-close'),
     dark = document.getElementById('dark')
 
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu'),
-        dark.classList.add('dark')
-    })
+navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu'),
+    dark.classList.add('dark'),
+    navToggle.style.setProperty('visibility', 'hidden')
+})
+
+function closeMenu(){
+    navMenu.classList.remove('show-menu'),
+    dark.classList.remove('dark'),
+    navToggle.style.setProperty('visibility', 'visible')
 }
 
-if (navClose) {
-  navClose.addEventListener('click', () => {
-      navMenu.classList.remove('show-menu'),
-      dark.classList.remove('dark')
-  })
-}
+dark.addEventListener('click', closeMenu);
+navClose.addEventListener('click', closeMenu);
 
 const navLink = document.querySelectorAll('.nav__link')
 
-function linkAction() {
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show-menu')
-    dark.classList.remove('dark')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+navLink.forEach(n => n.addEventListener('click', closeMenu))
 
 const sections = document.querySelectorAll('section[id]')
 
@@ -51,7 +46,7 @@ const darktheme = document.getElementById('article-header')
 function scrollLogo(){
     const scrollY = window.pageYOffset
     const sectionTop = darktheme.offsetTop
-    if (scrollY>sectionTop-80){
+    if (scrollY>sectionTop-100){
         document.getElementById('nav-toggle').style.color='rgb(13, 32, 75)'
     }
     else{
