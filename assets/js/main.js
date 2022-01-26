@@ -1,4 +1,5 @@
 const navMenu = document.getElementById('nav-menu'),
+    navHeader = document.getElementById('nav-header'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close'),
     dark = document.getElementById('dark')
@@ -44,9 +45,10 @@ window.addEventListener('scroll', scrollActive)
 const darktheme = document.getElementById('article-header')
 
 function scrollLogo(){
+    const navHeight = parseFloat(window.getComputedStyle(navHeader).height)
     const scrollY = window.pageYOffset
-    const sectionTop = darktheme.offsetTop
-    if (scrollY>sectionTop-100){
+    const sectionTop = darktheme.offsetHeight
+    if (scrollY+navHeight/2 >= sectionTop){
         document.getElementById('nav-toggle').style.color='rgb(13, 32, 75)'
     }
     else{
