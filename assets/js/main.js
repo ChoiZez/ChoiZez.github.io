@@ -1,23 +1,23 @@
 const navMenu = document.getElementById('nav-menu'),
     navHeader = document.getElementById('nav-header'),
-    navToggle = document.getElementById('nav-toggle'),
-    navClose = document.getElementById('nav-close'),
+    navToggle = document.querySelectorAll('.nav__toggle'),
+    navClose = document.querySelectorAll('#nav-close'),
     dark = document.getElementById('dark')
 
-navToggle.addEventListener('click', () => {
+navToggle.forEach(e => e.addEventListener('click', () => {
     navMenu.classList.add('show-menu'),
     dark.classList.add('dark'),
-    navToggle.style.setProperty('visibility', 'hidden')
-})
+    navToggle.forEach(e => e.style.setProperty('visibility', 'hidden'));
+}))
 
 function closeMenu(){
     navMenu.classList.remove('show-menu'),
     dark.classList.remove('dark'),
-    navToggle.style.setProperty('visibility', 'visible')
+    navToggle.forEach(e => e.style.setProperty('visibility', 'visible'));
 }
 
 dark.addEventListener('click', closeMenu);
-navClose.addEventListener('click', closeMenu);
+navClose.forEach(e => e.addEventListener('click', closeMenu));
 
 const navLink = document.querySelectorAll('.nav__link')
 
@@ -49,13 +49,17 @@ function scrollLogo(){
     const scrollY = window.pageYOffset
     const sectionTop = darktheme.offsetHeight
     if (scrollY+navHeight/2 >= sectionTop){
-        document.getElementById('nav-toggle').style.color='rgb(13, 32, 75)'
+        navToggle.forEach(e => e.style.color='rgb(13, 32, 75)');
+        navToggle.forEach(e => e.style.background='#fff');
     }
     else{
-        document.getElementById('nav-toggle').style.color='#fff'
+        navToggle.forEach(e => e.style.color='#fff');
+        navToggle.forEach(e => e.style.background='rgb(13, 32, 75)');
     }
 }
 window.addEventListener('scroll', scrollLogo)
+
+
 const sr = ScrollReveal({
   origin: 'top',
   distance:'0px',
