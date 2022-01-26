@@ -73,6 +73,8 @@ article .article__text .article__paragraph, article .article__text>h2, article .
     }
 }
 
+
+
 .nav {
     height: var(--header-height);
     display: flex;
@@ -91,7 +93,9 @@ article .article__text .article__paragraph, article .article__text>h2, article .
     cursor: pointer;
     color: #fff;   
     margin-left: 90%; 
+    z-index: 10;
 }
+
 .nav-header{
     position: fixed;
     top: 0;
@@ -198,7 +202,7 @@ article .article__text .article__paragraph, article .article__text>h2, article .
     border-radius: 50%;
   }
   
-  
+
 article section .article__paragraph p:last-child {
     margin-bottom: 0
 }
