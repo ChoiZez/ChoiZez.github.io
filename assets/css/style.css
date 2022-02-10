@@ -88,18 +88,26 @@ article .article__text .article__paragraph, article .article__text>h2, article .
     color: #000;
   }
   
-  .nav__toggle {
-    font-size: 2.25rem;
+.nav__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2.3rem;
     cursor: pointer;
     color: #fff;   
     margin-left: 90%; 
     z-index: 10;
 }
 
+.menu{
+    padding-right: 20px;
+}
+
 .nav-header{
     position: fixed;
     top: 0;
     left: auto;
+    max-width: 1120px;
     width: 100%;
     z-index: 1;
 }
@@ -181,7 +189,7 @@ article .article__text .article__paragraph, article .article__text>h2, article .
         top: .5rem;
         right: 1rem;
         cursor: pointer;
-      }
+    }
 }
   
   
@@ -252,6 +260,10 @@ article+section {
     .article-header__container {
         padding-bottom: calc((100vw - 32rem)/80*3 + 2rem);
         padding-top: calc((100vw - 32rem)/80*5 + 2rem)
+    }
+    .menu{
+        font-size: 0;
+        padding: 0;
     }
 }
 @media (max-width:850px) {

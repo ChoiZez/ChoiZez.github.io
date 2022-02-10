@@ -63,7 +63,7 @@ window.addEventListener('scroll', scrollLogo)
 const sr = ScrollReveal({
   origin: 'top',
   distance:'0px',
-  duration: 2000,
+  duration: 1000,
   delay: 100,
 })
 
